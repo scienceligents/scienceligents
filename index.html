@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scienceligents</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+        <!-- Swiper JS CSS-->
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+        <!-- Boxicons -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<!-- Header -->
+<section class="header-section">
+        <header class="header">
+                <nav class="nav container flex">
+                        <a href="#" class="logo-content flex">
+                            <i class='bx bx-test-tube logo-icon'></i>
+                            <span class="logo-text">Scienceligents</span>
+                        </a>
+    
+                        <div class="nav-content">
+                                <ul class="nav-list flex">
+                                        <li><a href="#home" class="nav-link active-navlink"><i class="bx bxs-home link-icon"></i>Home</a></li>
+                                        <li><a href="#games" class="nav-link"><i class='bx bxs-joystick link-icon'></i>Games</a></li>
+                                        <li><a href="#learn" class="nav-link"><i class='bx bxs-book-reader link-icon'></i>Learn</a></li>
+                                        <li><a href="#quizzes" class="nav-link"><i class='bx bxs-calendar-check link-icon'></i>Quizzes</a></li>
+                                </ul>
+    
+                                <i class='bx bx-x navClose-button'></i>
+                        </div>
+    
+                        <i class='bx bx-menu-alt-right navOpen-button'></i>
+                </nav>
+        </header>
+</section>
+
+
+<main>
+        <!-- Notifications -->
+        <section class="notification-section">
+                <div class="notification" id="LSnotification">
+                        <i class='bx bxs-check-circle notification-icon'></i>
+                        <h3 class="notification-title">Loged-in successfully!</h3>
+                </div>
+                <div class="notification" id="LFnotification">
+                        <i class='bx bxs-check-circle notification-icon'></i>
+                        <h3 class="notification-title">Log-in failed! Please try again.</h3>
+                </div>
+                
+                <div class="notification" id="ACSnotification">
+                        <i class='bx bxs-check-circle notification-icon'></i>
+                        <h3 class="notification-title">Account created successfully!</h3>
+                </div>
+                <div class="notification" id="ACFnotification">
+                        <i class='bx bxs-check-circle notification-icon'></i>
+                        <h3 class="notification-title">Account creation failed! Please try again.</h3>
+                </div>
+        
+                <div class="notification" id="Enotification">
+                        <i class='bx bxs-bug-alt notification-icon'></i>
+                        <h3 class="notification-title">Error! Please try again.</h3>
+                </div>
+        </section>
+
+        <!-- Sign Up -->
+        <section class="signUp-section">
+                <div class="sign-up" id="sign-up">
+                        <div class="close-button" onclick="toggleSignup()"><i class="bx bx-x"></i></div>
+                                <form action="#">
+                                        <h1>Sign Up<i class="bx bxs-user-plus"></i></h1>
+                                        <p>Create a account to explore games, quizzes and more...</p>
+
+                                        <div class="form-element">
+                                                <label for="email">Email:</label>
+                                                <input type="email" id="signup-email" placeholder="Enter your email address" >
+                                        </div>
+                                        <div class="form-element">
+                                                <label for="password">Password:</label>
+                                                <input type="password" id="signup-password" placeholder="Must be 6 characters long"  >
+                                        </div>
+                                        <div class="form-element">
+                                                <button class="button flex" type="button" id="signUp" name="signUp"><i class='bx bxs-user-plus'></i>Sign-up</button> 
+                                        </div>
+                                        
+                                </form>
+                        </div>
+                </div>
+        </section>
+        <!-- Sign Up popup script -->
+        <script>
+                function toggleSignup(){
+                        document.getElementById("sign-up").classList.toggle("active");
+                }
+        </script>
+
+        <!-- Home Section -->
+        <section class="home" id="home">
+                <div class="home-content">
+                        <!-- Theme Bar -->
+                        <section class="themeBar-section">
+                                <div class="theme-bar" id="theme-bar">
+                                        <button class="theme-button black active" data-color="#333333 #333333e9 #ffffff #fbfbfb #efefefe3"></button>
+                                        <button class="theme-button purple" data-color="#9755C1 #9755C1e9 #ffffff #fbf1fc #fcdcfce3"></button>
+                                        <button class="theme-button orange" data-color="#ffa500 #ffa500e9 #ffffff #faf6e4 #fde7cee3"></button>
+                                        <button class="theme-button green" data-color="#12c931 #12c931e9 #ffffff #e9ffe8 #d6fbcde3"></button>
+                                        <button class="theme-button blue" data-color="#618eff #618effe9 #ffffff #f1f5ff #d1ebfbe3"></button>
+
+                                        <i class='bx bxs-moon darkTheme-button' id="dark-theme"></i>
+                                </div> 
+                        </section>
+      
+                        <!-- Welcome container -->
+                        <div class="welcome-container">
+                                <div class="welcome-image">
+                                        <img src="images/robot.jpeg" alt="" id="welcome-image">
+                                </div>
+
+                                <div class="welcome-description">
+                                        <h1>Welcome to Scienceligents !</h1>
+                                        <p>
+                                                Science is a systematic endeavor that builds and organizes knowledge in the form of
+                                                testable explanations and predictions about the universe.
+                                        </p>
+                                        
+                                        <!-- Sign-In -->
+                                        <div class="form-element">
+                                                <label for="email">Email:</label>
+                                                <input type="email" id="signin-email" placeholder="Enter your email address" required>
+                                        </div>
+                                        <div class="form-element">
+                                                <label for="password">Password:</label>
+                                                <input type="password" id="signin-password" placeholder="Enter your password" required >
+                                        </div>
+                                        <div class="formElement-buttons">
+                                                <div class="sign-in">
+                                                        <button class="button flex" type="button" id="signIn" name="signIn"><i class='bx bx-key'></i></i></i>Sign-in</button>
+                                                </div>
+                                                
+                                                <div class="signup-buttons flex">
+                                                        <a href="#home" onclick="toggleSignup()" class="register">Register now</a>
+                                                        <span>or</span>
+                                                        <button id="google" name="google" title="Signup with Google" class="button google-signup">
+                                                                <!-- <a href="google=#"></a> -->
+                                                                <i class='bx bxl-google'></i>
+                                                        </button>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </section>
+    
+<!-- Explore section -->
+        <section class="explore section">
+                <h2 class="section-title">Explore Scienceligents</h2>
+                <h4 class="section-description">
+                        Explore variety of great learning tools such as Quizzes, Games, Past papers, E-Books, Syllabus related
+                        to your grade and more...
+                </h4>
+
+                <div class="explore-container">
+                        <div class="swiper explore-swiper">
+                                <div class="swiper-wrapper">
+                                        <article class="explore-card swiper-slide">
+                                                <img src="images/games (5).jpeg" alt="" class="explore-image">
+                                                <div class="card-description">
+                                                        <h3 class="content-title flex">Games<i class='bx bxs-joystick'></i></h3>
+                                                        <span class="content-description">Play some great games based on Maths and Science</span>
+                                                </div>
+                                    
+                                                <button class="button explore-button">
+                                                        <i class='bx bx-right-arrow-alt'></i>
+                                                </button>
+                                        </article>
+    
+                                        <article class="explore-card swiper-slide">
+                                                <img src="images/tools (1).jpeg" alt="" class="explore-image">
+                                                <div class="card-description">
+                                                        <h3 class="content-title flex">Tools<i class='bx bxs-cog'></i></h3>
+                                                        <span class="content-description">Play some great games based on Maths and Science</span>
+                                                </div>
+    
+                                                <button class="button explore-button">
+                                                        <i class='bx bx-right-arrow-alt'></i>
+                                                </button>
+                                        </article>
+    
+                                        <article class="explore-card swiper-slide">
+                                                <img src="images/quiz (3).jpeg" alt="" class="explore-image">
+                                                <div class="card-description">
+                                                        <h3 class="content-title flex">Quizzes<i class='bx bxs-calendar-check'></i></h3>
+                                                        <span class="content-description">Play some great games based on Maths and Science</span>
+                                                </div>
+    
+                                                <button class="button explore-button">
+                                                        <i class='bx bx-right-arrow-alt'></i>
+                                                </button>
+                                        </article>
+    
+                                        <article class="explore-card swiper-slide">
+                                                <img src="images/syllabus.jpeg" alt="" class="explore-image">
+                                                <div class="card-description">
+                                                        <h3 class="content-title flex">Your Syllabus<i class='bx bxs-book'></i></h3>
+                                                        <span class="content-description">Play some great games based on Maths and Science</span>
+                                                </div>
+    
+                                                <button class="button explore-button">
+                                                        <i class='bx bx-right-arrow-alt'></i>
+                                                </button>
+                                        </article>
+
+                                        <article class="explore-card swiper-slide">
+                                                <img src="images/e-books.jpeg" alt="" class="explore-image">
+                                                <div class="card-description">
+                                                        <h3 class="content-title flex">E-Books<i class='bx bxs-book-reader link-icon'></i></h3>
+                                                        <span class="content-description">Play some great games based on Maths and Science</span>
+                                                </div>
+    
+                                                <button class="button explore-button">
+                                                        <i class='bx bx-right-arrow-alt'></i>
+                                                </button>
+                                        </article>
+                                </div>
+                                <div class="swiper-button-next swiper-navBtn"></div>
+                                <div class="swiper-button-prev swiper-navBtn"></div>
+                                <div class="swiper-pagination"></div>
+                        </div>
+                </div>
+        </section>
+
+<!-- Quizzes Section -->
+        <section class="section quizzes" id="quizzes">
+                <div class="quizzes-container">
+                        <div class="quizzes-image">
+                                <img src="images/games (4).jpg" alt="">
+                        </div>
+                        <div class="quizzes-description">
+                                <h1>Play Quizzes and become a LIGENT!</h1>
+                                <p>     
+                                        Science quizzes are a fun way to test your knowledge and learn new facts about various
+                                        topics in science, such as biology, chemistry, physics, and more. Quizzes can
+                                        also help you prepare for exams, improve your grades, and boost your confidence.
+                                </p>
+
+                                <li>    [Science Quiz: Biology]: This quiz covers some basic concepts and facts about living organisms,
+                                        such as cells, tissues, organs, systems, genetics, and evolution.
+                                </li>
+                                <li>    [Science Quiz: Chemistry]: This quiz covers some fundamental topics and principles in chemistry,
+                                        such as atoms, molecules, elements, compounds, reactions, and periodic table.
+                                </li>
+                                <li>
+                                        [Science Quiz: Physics]: This quiz covers some basic concepts and phenomena in physics, such
+                                        as force, motion, energy, light, sound, electricity, and magnetism.
+                                </li>
+
+                                <button class="button flex"><i class='bx bx-right-arrow-alt'></i></i>Play</button>
+                        </div>
+                </div>
+        </section>
+        
+    
+<!-- Footer Section -->
+        <footer class="section footer">
+                <div class="footer-container container">
+                        <div class="footer-content">
+                                <a href="#" class="logo-content flex">
+                                        <i class='bx bx-test-tube logo-icon'></i>
+                                        <span class="logo-text">Scienceligents</span>
+                                </a>
+
+                                <p class="content-description">
+                                        Science is a systematic endeavor that builds and organizes 
+                                        knowledge in the form of testable explanations and predictions
+                                        about the universe.
+                                </p>
+
+                                <div class="footer-notice flex">
+                                        <i class='bx bx-bulb notice-icon'></i>
+                                
+                                        <div class="notice-text">
+                                                Not available on internet. A school project. CODEFEST 2023
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="footer-linkContent">
+                                <ul class="footer-links">
+                                        <h3 class="footerLinks-title">Resources</h3>
+
+                                        <li><a href="#" class="footer-link">GitHub hosting</a></li>
+                                        <li><a href="#" class="footer-link">Swiper JS</a></li>
+                                        <li><a href="#" class="footer-link">BoxIcons</a></li>
+                                        <li><a href="#" class="footer-link">DALL E 3</a></li>
+                                </ul>
+                                <ul class="footer-links">
+                                        <h3 class="footerLinks-title">About Us</h3>
+
+                                        <li><a href="#" class="footer-link">Our team</a></li>
+                                        <li><a href="#" class="footer-link">School</a></li>
+                                        <li><a href="#" class="footer-link">Teacher</a></li>
+                                        <li><a href="#" class="footer-link">Teacher</a></li>
+                                </ul>
+                                <ul class="footer-links">
+                                        <h3 class="footerLinks-title">Support</h3>
+
+                                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                                        <li><a href="#" class="footer-link">FAQs</a></li>
+                                        <li><a href="#" class="footer-link">Resources</a></li>
+                                        <li><a href="#" class="footer-link">Report a problem</a></li>
+                                </ul>
+                        </div>
+                </div>
+        </footer>
+
+<!-- Scroll Up -->
+        <a href="#home" class="scrollUp-button flex">
+                <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
+        </a>
+
+</main>
+
+<script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, 
+                 signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js"
+                ;
+        import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js";
+        import {  } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+                apiKey: "AIzaSyDG7KNzdg-uFDDhHk98i9mcC6A_WRwlRCg",
+                authDomain: "scienceligents-account-system.firebaseapp.com",
+                projectId: "scienceligents-account-system",
+                storageBucket: "scienceligents-account-system.appspot.com",
+                messagingSenderId: "2638798754",
+                appId: "1:2638798754:web:0fc4092e84de95ea6d9cfb"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider(app);
+
+
+        signUp.addEventListener('click', (e) => {
+
+                var signupEmail = document.getElementById('signup-email').value;
+                var signupPassword = document.getElementById('signup-password').value;
+
+                createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
+                        .then((userCredential) => {
+                                // Signed in 
+                                const user = userCredential.user;
+                                // ... user.uid
+                                set(ref(database, 'users/' + user.uid), {
+                                        email: signupEmail,
+                                        password: signupPassword,
+                                })
+                                .then(() => {
+                                        // Data saved successfully!
+                                        const acsNotification = document.getElementById ('ACSnotification');
+                                        acsNotification.classList.add("active");
+                                        setTimeout(() =>{
+                                                acsNotification.classList.remove("active");
+                                        }, 5000);
+                                        window.location.replace("#");
+                                })
+                                .catch((error) => {
+                                        // The write failed...
+                                        const acfNotification = document.getElementById ('ACFnotification');
+                                        acfNotification.classList.add("active");
+                                        setTimeout(() =>{
+                                                acfNotification.classList.remove("active");
+                                        }, 5000);
+                                });
+                        })
+                .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        alert(errorMessage);
+                });
+
+        });
+
+        signIn.addEventListener('click', (e) => {
+
+                var signinEmail = document.getElementById('signin-email').value;
+                var signinPassword = document.getElementById('signin-password').value;
+
+                signInWithEmailAndPassword(auth, signinEmail, signinPassword)
+                        .then((userCredential) => {
+                                // Signed in 
+                                const user = userCredential.user;
+                                // ...
+
+                                var lgDate = new Date();
+                                update(ref(database, 'users/' + user.uid), {
+                                        last_login: lgDate,
+                                })
+                                .then(() => {
+                                        // Data saved successfully!
+                                        const lsNotification = document.getElementById ('LSnotification');
+                                        lsNotification.classList.add("active");
+                                        setTimeout(() =>{
+                                                lsNotification.classList.remove("active");
+                                        }, 5000);
+                                        window.location.replace("#");
+                                })
+                                .catch((error) => {
+                                        // The write failed...
+                                        const lfNotification = document.getElementById ('LFnotification');
+                                        lfNotification.classList.add("active");
+                                        setTimeout(() =>{
+                                                lfNotification.classList.remove("active");
+                                        }, 5000);
+                                });
+
+                        })
+                .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        alert(errorMessage);
+                });
+        });
+
+        google.addEventListener('click', (e) => {
+                signInWithPopup(auth, provider)
+                .then((result) => {
+                        // This gives you a Google Access Token. You can use it to access the Google API.
+                        const credential = GoogleAuthProvider.credentialFromResult(result);
+                        // The signed-in user info.
+                        const user = result.user;
+                        // IdP data available using getAdditionalUserInfo(result)
+                        const lsNotification = document.getElementById ('LSnotification');
+                        lsNotification.classList.add("active");
+                        setTimeout(() =>{
+                                lsNotification.classList.remove("active");
+                        }, 5000);
+                        window.location.replace("#");
+                }).catch((error) => {
+                        // Handle Errors here.
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                });
+        });
+</script>
+
+<!-- Swiper JS -->
+<script src="js/swiper-bundle.min.js"></script>
+
+<!-- Scroll Reveal -->
+<script src="js/scrollreveal.js"></script>
+
+<!-- Main JavaScript -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
